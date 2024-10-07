@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 2 - Informatii oras</title>
+</head>
+<body>
+    <div class="contine">
+        <h1>Informatii Oras</h1>
+<!--afisez numele orasului -->
+<p><label for="numeleOrasului">Numele Orasului:</label></p>
+<input type="text" id="numeleOrasului" placeholder="Introduceti numele orasului" oninput="testactivarebuton()"/>
+<!--afisez nr loc-->
+<p><label for="locuitori">Numar locuitori:</label></p>
+<input type="numar" id="locuitori" placeholder="Introduceti numarul de locuitori">
+<!--mun sau res-->
+<br><label for="tipOras">Tipul Orasului:</label>
+<select id="tipOras">
+    <option value="minicipiu">Municipiu</option>
+    <option value="resedinta">Resedinta</option>
+</select>
+<!--facilitati-->
+<br><label for="facilitatiOras">Facilitati disponibile:</label>
+<select id="facilitatiOras" multiple>
+    <option value="stadion">Are stadion</option>
+    <option value="teatru">Are teatru</option>
+    <option value="biblioteca">Are biblioteca</option>
+    <option value="cinema">Are cinema</option>
+</select>
+<br><button id="afiseazabuton" disabled>Afiseaza</button>
+<div id="InformatiiOras"class="infor"></div>
+</div>
+<script>
+  
+let numeleOrasuluiinput= document.getElementById("numeleOrasului")
+const locuitoriinput=document.getElementById("locuitori")
+const tipOrasselect=document.getElementById("tipOras")
+const facilitatiOrasselect=document.getElementById("facilitatiOras")
+const afiseazabuton=document.getElementById("afiseazabuton")
+const InformatiiOrasDiv=document.getElementById("InformatiiOras")
+//fun pt act but oras
+/*numeleOrasuluiinput.addEventListener('input',function(){
+    if (numeleOrasuluiinput.value.legth >=7){
+        afiseazabuton.disabled = false;
+    }else{
+        afiseazabuton.disabled= true;
+    }
+});*/ 
+function testactivarebuton(){
+    //console.log (numeleOrasuluiinput.value.length)
+    let value=numeleOrasuluiinput.value
+    let lungime=value.length
+    console.log(lungime)
+    if (numeleOrasuluiinput.value.length >=7){
+        afiseazabuton.disabled = false;
+    }else{
+        afiseazabuton.disabled= true;
+}
+}
+//fun pt but afis
+afiseazabuton.addEventListener('click',()=>{
+    const numeleOrasului= numeleOrasuluiinput.value;
+    const locuitori=locuitoriinput.value;
+    const facilitatiOras=facilitatiOrasinput.value;
+    const Afiseazabuton=Afiseazabutoninput.value;
+})
+</script>
+</body>
+</html>
